@@ -107,7 +107,7 @@ Transform:
   m_GameObject: {fileID: 3440448512101825629}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_Children:
   - {fileID: 2366781460571828347}
   m_Father: {fileID: 0}
@@ -181,8 +181,6 @@ MonoBehaviour:
   currentBossColor: Shambles
   currentColor: White
   HealthImage: {fileID: 0}
-  BossHealthCanvas: {fileID: 0}
-  spawnGameObj: {fileID: 0}
   player: {fileID: 0}
   Waypoint: {fileID: 0}
   points: []
@@ -194,11 +192,11 @@ MonoBehaviour:
   - {fileID: 5374646726603253832, guid: e351245c058c3ad4cb2338daed1567ce, type: 3}
   - {fileID: 5976105756846104057, guid: f50882ed77093ec4f955f22a6b2a7950, type: 3}
   - {fileID: 8464465586472282068, guid: 9ba3df20289381f43b64c93abc440a99, type: 3}
-  projectilePrefab: {fileID: 7327338504047898686, guid: 28e1b188748f1ff4a8d6f3904131321b,
+  projectilePrefab: {fileID: 7089434256996548516, guid: 2335ac7ff0a1d9940b258203aa4df326,
     type: 3}
   scoreValue: 5
   movement: 
-  speed: 2.5
+  speed: 2
   powerDmg: 10
   bulletSpeed: 1
   health: 20

@@ -606,9 +606,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemiesPrefabs:
+  - {fileID: 6120776488083369055, guid: b50f97b845b798240812113a433b17a2, type: 3}
+  - {fileID: 31465046377724658, guid: 2ff3bf2df8be3ec44b30b8c47672a891, type: 3}
+  - {fileID: 2453767166979558894, guid: 86ed0b32327902b44a5c45f85755553e, type: 3}
+  - {fileID: 4058959763959146713, guid: 8423dfc0b26c8fc4bafe1f8a7a184a6f, type: 3}
   - {fileID: 3440448512101825629, guid: 52c16b37ec995f44b8456ce2167f9667, type: 3}
-  - {fileID: 5659876410547515105, guid: b50f97b845b798240812113a433b17a2, type: 3}
-  - {fileID: 5784961493154955481, guid: f592a213ac6f0f1498984a14c7fa6557, type: 3}
+  - {fileID: 5492436284146073812, guid: f592a213ac6f0f1498984a14c7fa6557, type: 3}
   bossPrefabs:
   - {fileID: 8208349321708237343, guid: 9bb7ac0ead560b1458d8ba7541788cd2, type: 3}
   Waypoints:
@@ -626,7 +629,7 @@ MonoBehaviour:
   Player: {fileID: 5158359642207456100, guid: cdc2f6fffbb2cd840a636398b3099cc3, type: 3}
   SpiralStartPoints:
   - {fileID: 4953609836745138104, guid: c0071bcc89f3a8e42801227ca3e593d3, type: 3}
-  wave: 0
+  wave: 9
   score: 0
 --- !u!114 &3742259963014253730
 MonoBehaviour:
@@ -1734,7 +1737,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000073433, y: -0}
+  m_AnchoredPosition: {x: 0.000073433, y: 0}
   m_SizeDelta: {x: 535.8523, y: 642.7939}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8658270466573068352
@@ -2455,7 +2458,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 534669904}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
