@@ -69,7 +69,7 @@ public class Spawn : MonoBehaviour
 
             if(wave == 10 || wave == 20)
             {
-                spawnPos = new Vector3(0f, 6f, 0f);
+                spawnPos = new Vector3(0f, 6f, -0.5f);
                 SpawnBoss();
                 Invoke("SpawnNextWave", 6f);
             }
@@ -87,40 +87,7 @@ public class Spawn : MonoBehaviour
         
     }
     
-    private void SpawnNextWave()
-    {
-        if (wavesData[wave].way == "Waypoints")
-        {
-            Waypoint = GetWaypoint();
-            spawnPos = Waypoint.transform.GetChild(0).position;
-            childCount = Waypoint.transform.childCount;
-            InvokeRepeating("SpawnWaypoints", 2, 0.5f);
-
-        }
-        else if (wavesData[wave].way == "Wave")
-        {
-            Waypoint = SetPoints[Random.Range(0, SetPoints.Length)];
-            spawnPos = new Vector3(Random.Range(-2.0f, 2.0f), 6.0f, 0.0f);
-            childCount = Waypoint.transform.childCount;
-            InvokeRepeating("SpawnWave", 2, 0.5f);
-
-        }
-        else if (wavesData[wave].way == "Spiral")
-        {
-            Waypoint = SpiralStartPoints[Random.Range(0, SpiralStartPoints.Length)];
-            spawnPos = Waypoint.transform.position;
-            childCount = 10;
-            InvokeRepeating("SpawnSpiral", 2, 1.0f);
-
-        }
-        else if (wavesData[wave].way == "Random")
-        {
-            childCount = 20;
-            InvokeRepeating("SpawnRandom", 2, 1.0f);
-
-        }
-        powerUp = false;
-    }
+    
     private void SpawnRandomWeapon()
     {
         int weapon = Random.Range(0, Weapons.Length);
@@ -227,8 +194,43 @@ public class Spawn : MonoBehaviour
         return Waypoints[random];
 
     }
+    // number of enemies per Wave
+    private void SpawnNextWave()
+    {
+        if (wavesData[wave].way == "Waypoints")
+        {
+            Waypoint = GetWaypoint();
+            spawnPos = Waypoint.transform.GetChild(0).position;
+            childCount = Waypoint.transform.childCount;
+            InvokeRepeating("SpawnWaypoints", 2, 0.5f);
 
+        }
+        else if (wavesData[wave].way == "Wave")
+        {
+            Waypoint = SetPoints[Random.Range(0, SetPoints.Length)];
+            spawnPos = new Vector3(Random.Range(-2.0f, 2.0f), 6.0f, 0.0f);
+            childCount = Waypoint.transform.childCount;
+            InvokeRepeating("SpawnWave", 2, 0.5f);
 
+        }
+        else if (wavesData[wave].way == "Spiral")
+        {
+            Waypoint = SpiralStartPoints[Random.Range(0, SpiralStartPoints.Length)];
+            spawnPos = Waypoint.transform.position;
+            childCount = 10;
+            InvokeRepeating("SpawnSpiral", 2, 1.0f);
+
+        }
+        else if (wavesData[wave].way == "Random")
+        {
+            childCount = 20;
+            InvokeRepeating("SpawnRandom", 2, 1.0f);
+
+        }
+        powerUp = false;
+    }
+
+    // enemy data
     private void SetWavesData()
     {
         for(int i = 1;i<wavesData.Length -1;i++)
@@ -251,12 +253,12 @@ public class Spawn : MonoBehaviour
                 }
                 else if(i < 10)
                 {
-                    enemyForWave = new GameObject[] { enemiesPrefabs[0], enemiesPrefabs[1] };
+                    enemyForWave = new GameObject[] { enemiesPrefabs[0], enemiesPrefabs[1], enemiesPrefabs[2] };
                     possibleWaves = new string[] { "Waypoints", "Wave", "Random" };
                 }
                 else if (i < 20 && i != 10)
                 {
-                    enemyForWave = new GameObject[] { enemiesPrefabs[0], enemiesPrefabs[1], enemiesPrefabs[2] };
+                    enemyForWave = new GameObject[] { enemiesPrefabs[0], enemiesPrefabs[1], enemiesPrefabs[2], enemiesPrefabs[3], enemiesPrefabs[4], enemiesPrefabs[5] };
                     possibleWaves = new string[] { "Waypoints", "Wave", "Spiral", "Random" };
                 }
                 wavesData[i] = new Wave_Data(enemyForWave, "Soldier", possibleWaves[Random.Range(0,possibleWaves.Length)]);

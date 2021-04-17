@@ -7,6 +7,7 @@ public class Wave_Data
     public GameObject[] enemy;
     public string type;
     public string way;
+
     public Wave_Data( GameObject[] enemy, string type, string way)
     {
         this.enemy = enemy;
